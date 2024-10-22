@@ -1,0 +1,38 @@
+actor HesapMakinesi {
+    
+    // Değişkenler
+    var hucre : Int = 0;
+    
+    // Toplama işlemi
+    public func toplama(sayi: Int) : async Int {
+        hucre += sayi;
+        return hucre;
+    };
+    
+    // Çıkarma işlemi
+    public func cikarma(sayi: Int) : async Int {
+        hucre -= sayi;
+        return hucre;
+    };
+    
+    // Çarpma işlemi
+    public func carpma(sayi: Int) : async Int {
+        hucre *= sayi;
+        return hucre;
+    };
+    
+    // Bölme işlemi
+    public func bolme(sayi: Int) : async ?Int {
+        if (sayi == 0) {
+            return null; // Sıfıra bölme hatası
+        };
+        hucre /= sayi;
+        return ?hucre;
+    };
+    
+    // Temizleme işlemi
+    public func temizle() : async Int {
+        hucre := 0;
+        return hucre;
+    };
+};
